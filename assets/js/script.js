@@ -121,9 +121,8 @@ document.getElementById("letterBtn").addEventListener("click", (e) => {
     
         let wordToGuess = document.getElementById("wordToGuess");
         wordToGuess.innerHTML = wordToShow.split("").join(" ");
+        checkWin();
     }
-
-    checkWin();
 });
 
 generateGame();
