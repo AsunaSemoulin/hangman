@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css">
+    <script src="./assets/js/script.js" defer></script>
+    <title>Hangman</title>
+</head>
+<body>
+    <header class="m-5">
+        <h1 class="text-5xl">Hangman - v1.0</h1>
+        <p>by Asuna Semoulin</p>
+    </header>
+
+    <main class="m-5">
+        <img id="diagram"></img>
+        <form>
+            <p>Enter your letter:</p>
+            <input type="text" maxlength="1" id="letter" class="border-black border-2 mb-5">
+            <button id="letterBtn" class="bg-red-500 hover:bg-red-300 text-white p-2 rounded">Submit</button>
+        </form>
+        <form>
+            <p>Enter your word:</p>
+            <input type="text" id="word" class="border-black border-2 mb-5">
+            <button id="wordBtn" class="bg-red-500 hover:bg-red-300 text-white p-2 rounded">Submit</button>
+        </form>
+    </main>
+
+    <footer class="m-5 mt-10 flex justify-center">
+        <p id="wordToGuess">_ _ _ _ _ _</p>
+    </footer>
+</body>
+</html>
