@@ -63,6 +63,7 @@ let checkWin = () => {
         alert("You win!");
     }
     else if (diagramState >= 7) {
+        gameOver = true;
         alert("You loose!");
     }
 }
@@ -107,7 +108,7 @@ document.getElementById("letterBtn").addEventListener("click", (e) => {
                 wordToShow += "_";
             }
             else if (letter == " ") {
-                wordToShow += "&nbsp";
+                wordToShow += " ";
             }
             else {
                 wordToShow += letter;
