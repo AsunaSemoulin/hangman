@@ -9,11 +9,30 @@ const hangs = [
 ];
 
 const words = [
+    "guinea pigs",
+    "partner",
+    "fretful",
+    "instrument",
+    "stocking",
+    "tawdry",
+    "striped",
+    "depressed",
+    "stomach",
+    "cave",
+    "lavish",
+    "wealth",
+    "punishment",
+    "behavior",
+    "efficacious",
+    "sign",
+    "receive",
+    "venomous",
+    "inform",
+    "lumber",
     "dog",
     "cat",
     "rabbit",
-    "bunny",
-    "guinea pigs"
+    "bunny"
 ];
 
 let gameOver = false;
@@ -30,8 +49,6 @@ let diagramState = 0;
 
 let hideRandomWord = () => {
     let randomWordHidden = "";
-
-    console.log(randomWordArr);
 
     for (let letter of randomWordArr) {
         if (letter == " ") {
@@ -97,18 +114,19 @@ document.getElementById("letterBtn").addEventListener("click", (e) => {
                 letterIsGood = true;
                 word[a] = tryLetter;
             }
+            else if (randomWordArr[a] == " ") {
+                word[a] = " ";
+            }
         }
         
         let wordToShow = "";
-    
-        console.log(word);
-    
+
         for (let letter of word) {
             if (letter == "") {
                 wordToShow += "_";
             }
             else if (letter == " ") {
-                wordToShow += " ";
+                wordToShow += "!";
             }
             else {
                 wordToShow += letter;
@@ -119,9 +137,14 @@ document.getElementById("letterBtn").addEventListener("click", (e) => {
             diagramState += 1;
             diagramSet();
         }
-    
+
         let wordToGuess = document.getElementById("wordToGuess");
-        wordToGuess.innerHTML = wordToShow.split("").join(" ");
+
+        wordToShow = wordToShow.split("");
+        wordToShow = wordToShow.join(" ");
+        wordToShow = wordToShow.replace("!", "&nbsp");
+
+        wordToGuess.innerHTML = wordToShow;
         checkWin();
     }
 });
